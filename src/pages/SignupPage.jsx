@@ -1,7 +1,7 @@
 // src/pages/SignupPage.jsx
 
 import { useState } from 'react';
-import { useAuth } from '../context/AuthContext';
+import { useAuth } from '../context/AuthContext.jsx'; // Corrected import path
 import { useNavigate, Link } from 'react-router-dom';
 
 function SignupPage() {
@@ -17,8 +17,7 @@ function SignupPage() {
         try {
             await signup(username, password);
             navigate('/login');
-        } catch (err)
-{
+        } catch (err) {
             setError('Failed to create an account. Username may already be taken.');
             console.error(err);
         }
